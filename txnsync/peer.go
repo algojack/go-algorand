@@ -49,13 +49,13 @@ const shortTermRecentTransactionsSentBufferLength = 5000
 const pendingUnconfirmedRemoteMessages = 20
 
 // longTermRecentTransactionsSentBufferLength is the size of the long term transaction id cache.
-const longTermRecentTransactionsSentBufferLength = 15000
-const minDataExchangeRateThreshold = 500 * 1024            // 500KB/s, which is ~3.9Mbps
-const maxDataExchangeRateThreshold = 100 * 1024 * 1024 / 8 // 100Mbps
+const longTermRecentTransactionsSentBufferLength = 75000
+const minDataExchangeRateThreshold = 5000 * 1024           // 500KB/s, which is ~3.9Mbps
+const maxDataExchangeRateThreshold = 500 * 1024 * 1024 / 8 // 100Mbps
 const defaultDataExchangeRate = minDataExchangeRateThreshold
-const defaultRelayToRelayDataExchangeRate = 10 * 1024 * 1024 / 8 // 10Mbps
-const bloomFilterRetryCount = 3                                  // number of bloom filters we would try against each transaction group before skipping it.
-const maxTransactionGroupTrackers = 15                           // number of different bloom filter parameters we store before rolling over
+const defaultRelayToRelayDataExchangeRate = 100 * 1024 * 1024 / 8 // 10Mbps
+const bloomFilterRetryCount = 3                                   // number of bloom filters we would try against each transaction group before skipping it.
+const maxTransactionGroupTrackers = 15                            // number of different bloom filter parameters we store before rolling over
 
 const (
 	// peerStateStartup is before the timeout for the sending the first message to the peer has reached.
